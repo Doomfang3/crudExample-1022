@@ -1,0 +1,13 @@
+<h1>Products Page</h1>
+<form style="display: flex; flex-direction: column" method="POST" action="/products">
+  <label>Product Label <input type="text" name="label" /></label>
+  <label>Product Price <input type="number" name="price" /></label>
+  <label>Product Weight <input type="number" name="weight" /></label>
+  <button type="submit">Add</button>
+</form>
+<% products.forEach(product => { %>
+<p><%= product.label %></p>
+<p><%= product.price %> €</p>
+<p><%= product.weight %>g</p>
+<a href="<%= `/products/${product.id}` %>">Details</a>
+<% }) %>
